@@ -4,31 +4,35 @@ const id = "24B*****";
 // パスワードを設定
 const password = "***********";
 //マトリクスコード
-var code = "AAAAAAAAAA\nBBBBBBBBBB\nCCCCCCCCCC\nDDDDDDDDDD\nEEEEEEEEEE\nFFFFFFFFFF\nGGGGGGGGGG";
-///////////////////////////////////////////////////////////////////////////////////////////////////
+//          ABCDEFGHIJ  ABCDEFGHIJ  ABCDEFGHIJ  ABCDEFGHIJ  ABCDEFGHIJ  ABCDEFGHIJ  ABCDEFGHIJ
+var code = "1111111111\n2222222222\n3333333333\n4444444444\n5555555555\n6666666666\n7777777777";
+//いじるのはここまで///////////////////////////////////////////////////////////////////////////////
+
+
+//ここからいじったらダメな部分が始まる~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 const codes = code.split("\n");
 // ページの読み込みが完了したら実行
 window.addEventListener('load', async function() {
   // ID入力欄を取得
   const idInput = document.querySelector('input[type="text"][name="usr_name"]');
   if (idInput) {
-    // ID入力欄に値を設定
+    // ID入力
     idInput.value = id;
     // パスワード入力欄を取得
     const passwordInput = document.querySelector('input[type="password"][name="usr_password"]');
     if (passwordInput) {
-      // パスワード入力欄に値を設定
+      // パスワード入力
       passwordInput.value = password;
     }
   }else{
-    //新しいページにある3つのパスワード入力欄を検出
+    //新しいページにある3つのマトリクスコード入力欄を検出
     const newPasswordInput1 = document.querySelector('input[type="password"][name="message3"]');
     const newPasswordInput2 = document.querySelector('input[type="password"][name="message4"]');
     const newPasswordInput3 = document.querySelector('input[type="password"][name="message5"]');
     
-    // 各パスワード入力欄に対して異なるパスワードを設定
+    // 各コード入力欄に対して異なるコードを設定
     if (newPasswordInput1) {
-      // ページのテキストコンテンツを取得
+      // ページのテキストを取得
       const pageContent = document.body.innerText;
       // 正規表現を使用して指定された形式の文字列を抽出するパターンを定義
       const pattern = /\[(\w+),(\d+)\]/g;
@@ -45,6 +49,7 @@ window.addEventListener('load', async function() {
       newPasswordInput3.value = newPasswords[2];
     }
   }
+  //日本語ページに切り替え
   if (window.location.href === "https://portal.nap.gsic.titech.ac.jp/GetAccess/ResourceList")
     window.location.href = "https://portal.nap.gsic.titech.ac.jp/GetAccess/ResourceList?lang=ja";
 });
