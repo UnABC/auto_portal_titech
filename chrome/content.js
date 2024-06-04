@@ -24,6 +24,11 @@ window.addEventListener('load', async function() {
       // パスワード入力
       passwordInput.value = password;
     }
+	//自動でOKボタンを押す
+	const okButton = document.querySelector('input[type="submit"][name="OK"][value="    OK    "]');
+	if (okButton) {
+		okButton.click();
+	}
   }else{
     //新しいページにある3つのマトリクスコード入力欄を検出
     const newPasswordInput1 = document.querySelector('input[type="password"][name="message3"]');
@@ -47,6 +52,11 @@ window.addEventListener('load', async function() {
       newPasswordInput1.value = newPasswords[0];
       newPasswordInput2.value = newPasswords[1];
       newPasswordInput3.value = newPasswords[2];
+	//自動でOKボタンを押す
+	const okButton = document.querySelector('input[type="submit"][name="OK"][value="    OK    "]');
+	if (okButton) {
+		okButton.click();
+	}
     }
   }
   //日本語ページに切り替え
