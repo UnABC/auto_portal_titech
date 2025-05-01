@@ -1,0 +1,92 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <link href="bootstrap.min.css" rel="stylesheet">
+    <title>Auto Tech portal login Options</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app">
+        <div class="container-fluid">
+            <form class="needs-validation" novalidate>
+                <div class="form-group">
+                    <div class="row">
+                        <div class="col-sm-5">Tokyo Tech ID(ex.24B31365)</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <input id="TitechID" type="text" class="form-control" v-model="trelloApiKey" required>
+                            <div class="invalid-feedback">Please enter your Tokyo Tech portal ID.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">Tokyo Tech portal password</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <input id="TitechPW" type="password" class="form-control" v-model="trelloApiToken" required>
+                            <div class="invalid-feedback">Please enter your Tokyo Tech portal password.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">Matrix Code※</div>
+                    </div>
+                    <div class="row">
+                        <div>
+                            <input id="Matrix" type="text" class="form-control" v-model="trelloListId" required>
+                            <div class="invalid-feedback" id="matrixErrorMessage">Matrix code must be exactly 70
+                                characters.</div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">Science Tokyo ID</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-5">
+                            <input id="SciKyoID" type="text" class="form-control" v-model="trelloApiKey" required>
+                            <div class="invalid-feedback">Please enter your Science Tokyo ID.</div>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="form-check form-check-inline">
+                            <div class="col-sm-10">
+                                <button id="button" class="btn btn-primary" type="submit">Save</button>
+                            </div><br>
+                            <p id="succeed"
+                                class="hidden col-sm-10 alert alert-success alert-dismissible align-items-center fade show"
+                                role="alert">
+                                <strong class="mx-2">Success!</strong> Saved successfully.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </p>
+                            <p id="failed" class="hidden col-sm-10 alert alert-danger alert-dismissible fade show"
+                                role="alert">
+                                <strong class="mx-2">Error!</strong> Some field is empty or invalid.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <br>
+        <div>
+            <p>※Please enter the matrix code in the format shown below.<br>
+                For the example below, please enter it as follows (lowercase letters are acceptable):
+                FHCFAQQBCDKEFIHRJYXDIEYJTMXFNRKVLMRHRMJHDHNOPWXQXVABCDEFGXDIECJTMXFNRK</p>
+            <center><img src="./matrix.png" alt="matrix example"></center><br>
+        </div>
+    </div>
+    <script src="./bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="./option.js"></script>
+</body>
+
+</html>
